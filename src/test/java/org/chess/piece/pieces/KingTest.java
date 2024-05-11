@@ -17,7 +17,6 @@ class KingTest {
         assertTrue(king.canMove(5,5));
 
         assertFalse(king.canMove(5,6));
-
     }
 
     @Test
@@ -30,6 +29,5 @@ class KingTest {
         assertTrue(king.canMove(5,4));
 
         assertFalse(king.canMove(6,6));
-
     }
 }

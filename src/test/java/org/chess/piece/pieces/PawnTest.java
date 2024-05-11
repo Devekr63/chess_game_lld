@@ -36,7 +36,6 @@ class PawnTest {
         assertFalse(pawnWhite.canCapturePiece(4,2));
         assertFalse(pawnWhite.canCapturePiece(3,4));
         assertFalse(pawnBlack.canCapturePiece(4,3));
-
     }
 
 }

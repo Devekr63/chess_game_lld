@@ -5,7 +5,6 @@ import org.chess.game.Color;
 public abstract class Piece {
     protected PieceType type;
     protected Color color;
-
     protected int[] currentPosition = new int[2];
 
     public Piece(PieceType type, Color color, int x, int y){

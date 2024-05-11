@@ -35,6 +35,5 @@ class QueenTest {
         //Wrong movement
         assertFalse(queen.canMove(2,5));
         assertFalse(queen.canMove(1,3));
-
     }
 }
