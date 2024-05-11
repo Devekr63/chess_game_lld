@@ -13,14 +13,13 @@ class QueenTest {
 
         //Correct movement
         assertTrue(queen.canMove(7,1));
-        assertTrue(queen.canMove(7,1));
+        assertTrue(queen.canMove(1,7));
         assertTrue(queen.canMove(0,0));
         assertTrue(queen.canMove(7,7));
 
         //wrong movement
         assertFalse(queen.canMove(6,7));
         assertFalse(queen.canMove(7,6));
-
     }
 
     @Test

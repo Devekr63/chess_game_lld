@@ -27,12 +27,12 @@ public class Pawn extends Piece implements Movement {
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY){
-        return  this.color == Color.WHITE && positionX - currentPositionX == 1 && positionY - currentPositionY == 1
-                || this.color == Color.BLACK && positionX - currentPositionX == -1 && positionY - currentPositionY == -1;
+        return  this.color == Color.WHITE && positionY - currentPositionY == 1 && Math.abs(positionX - currentPositionX) == 1
+                || this.color == Color.BLACK && positionY - currentPositionY == -1 && Math.abs(positionX - currentPositionX) == 1;
     }
 
     private boolean canMoveForward(int positionX, int positionY, int currentPositionX, int currentPositionY){
-        return this.color == Color.WHITE && positionY == currentPositionY && positionX - currentPositionX == 1
-                || this.color == Color.BLACK && positionY == currentPositionY && positionX - currentPositionX == -1;
+        return this.color == Color.WHITE && positionX == currentPositionX && positionY - currentPositionY == 1
+                || this.color == Color.BLACK && positionX == currentPositionX && positionY - currentPositionY == -1;
     }
 }
