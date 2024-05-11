@@ -8,7 +8,7 @@ import org.chess.piece.PieceType;
 public class Knight extends Piece implements Movement {
 
     public Knight(Color color, int x, int y) {
-        super(PieceType.ROOK, color, x, y);
+        super(PieceType.KNIGHT, color, x, y);
     }
 
     @Override
