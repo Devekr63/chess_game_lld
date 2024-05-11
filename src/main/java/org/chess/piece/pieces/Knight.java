@@ -5,9 +5,9 @@ import org.chess.piece.Movement;
 import org.chess.piece.Piece;
 import org.chess.piece.PieceType;
 
-public class Rook extends Piece implements Movement {
+public class Knight extends Piece implements Movement {
 
-    public Rook(Color color, int x, int y) {
+    public Knight(Color color, int x, int y) {
         super(PieceType.ROOK, color, x, y);
     }
 
