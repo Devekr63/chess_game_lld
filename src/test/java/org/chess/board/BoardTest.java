@@ -58,6 +58,8 @@ class BoardTest {
         b.board[4][4] = new Box(king, Color.WHITE);
         b.board[5][5] = new Box(null, Color.WHITE);
 
-        assertFalse(b.movePiece(4,4,9,9));
+        assertFalse(b.movePiece(4,4,8,8));
+        assertFalse(b.movePiece(4,4,-1,-1));
+
     }
 }
