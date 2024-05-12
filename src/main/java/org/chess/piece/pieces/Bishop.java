@@ -1,13 +1,13 @@
 package org.chess.piece.pieces;
 
 import org.chess.game.Color;
-import org.chess.piece.Movement;
 import org.chess.piece.Piece;
 import org.chess.piece.PieceType;
 
-public class Bishop extends Piece implements Movement{
+public class Bishop extends Piece {
 
     private final Color pathColor;
+
     public Bishop(Color color, int x, int y, Color pathColor) {
         super(PieceType.BISHOP, color, x, y);
         this.pathColor = pathColor;
@@ -19,11 +19,11 @@ public class Bishop extends Piece implements Movement{
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY) {
-        return canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+    public boolean canCapturePiece(int positionX, int positionY, Color color) {
+        return !this.color.equals(color) && canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
-    private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY){
+    private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {
         return Math.abs(positionX - currentPositionX) == Math.abs(positionY - currentPositionY);
     }
 

@@ -1,11 +1,10 @@
 package org.chess.piece.pieces;
 
 import org.chess.game.Color;
-import org.chess.piece.Movement;
 import org.chess.piece.Piece;
 import org.chess.piece.PieceType;
 
-public class Knight extends Piece implements Movement {
+public class Knight extends Piece {
 
     public Knight(Color color, int x, int y) {
         super(PieceType.KNIGHT, color, x, y);
@@ -17,11 +16,11 @@ public class Knight extends Piece implements Movement {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY) {
-        return canMoveLShaped(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+    public boolean canCapturePiece(int positionX, int positionY, Color color) {
+        return !this.color.equals(color) && canMoveLShaped(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
-    private boolean canMoveLShaped(int positionX, int positionY, int currentPositionX, int currentPositionY){
+    private boolean canMoveLShaped(int positionX, int positionY, int currentPositionX, int currentPositionY) {
         int yMove = Math.abs(positionY - currentPositionY);
         int xMove = Math.abs(positionX - currentPositionX);
 
