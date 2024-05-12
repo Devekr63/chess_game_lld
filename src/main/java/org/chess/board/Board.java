@@ -1,5 +1,6 @@
 package org.chess.board;
 
+import org.chess.game.Color;
 import org.chess.piece.Piece;
 
 public class Board {
@@ -7,9 +8,10 @@ public class Board {
 
     public boolean movePiece(int currentPositionX, int currentPositionY, int newPositionX, int newPositionY) {
         Piece piece = getPiece(currentPositionX, currentPositionY);
+        Color pathColor = getBoxColor(newPositionX, newPositionY);
 
         if (isPositionEmpty(newPositionX, newPositionY)) {
-            if (piece.canMove(newPositionX, newPositionY)) {
+            if (piece.canMove(newPositionX, newPositionY, pathColor)) {
                 move(newPositionX, newPositionY, currentPositionX, currentPositionY);
                 return true;
             }
@@ -17,7 +19,7 @@ public class Board {
         }
 
         Piece enemyPiece = getPiece(newPositionX, newPositionY);
-        if(piece.canCapturePiece(newPositionX, newPositionY, enemyPiece.getColor())){
+        if(piece.canCapturePiece(newPositionX, newPositionY, enemyPiece.getColor(), pathColor)){
             System.out.println("Piece captured "+ getPiece(newPositionX, newPositionY).getClass().getSimpleName());
             move(newPositionX, newPositionY, currentPositionX, currentPositionY);
             return true;
@@ -37,5 +39,9 @@ public class Board {
 
     private Piece getPiece(int newPositionX, int newPositionY) {
         return board[newPositionY][newPositionX].getPiece();
+    }
+
+    private Color getBoxColor(int newPositionX, int newPositionY){
+        return board[newPositionY][newPositionX].color;
     }
 }

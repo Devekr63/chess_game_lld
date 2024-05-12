@@ -13,13 +13,13 @@ class PawnTest {
         Pawn pawnBlack = new Pawn(Color.BLACK, 4, 4);
         Pawn pawnWhite = new Pawn(Color.WHITE, 3, 3);
 
-        assertTrue(pawnBlack.canMove(4, 3));
-        assertTrue(pawnWhite.canMove(3, 4));
+        assertTrue(pawnBlack.canMove(4, 3, Color.BLACK));
+        assertTrue(pawnWhite.canMove(3, 4, Color.BLACK));
 
-        assertFalse(pawnBlack.canMove(5, 4));
-        assertFalse(pawnWhite.canMove(2, 3));
-        assertFalse(pawnWhite.canMove(5, 4));
-        assertFalse(pawnWhite.canMove(2, 3));
+        assertFalse(pawnBlack.canMove(5, 4, Color.BLACK));
+        assertFalse(pawnWhite.canMove(2, 3, Color.BLACK));
+        assertFalse(pawnWhite.canMove(5, 4, Color.BLACK));
+        assertFalse(pawnWhite.canMove(2, 3, Color.BLACK));
     }
 
     @Test
@@ -27,16 +27,16 @@ class PawnTest {
         Pawn pawnBlack = new Pawn(Color.BLACK, 4, 4);
         Pawn pawnWhite = new Pawn(Color.WHITE, 3, 3);
 
-        assertTrue(pawnBlack.canCapturePiece(3, 3, Color.WHITE));
-        assertTrue(pawnBlack.canCapturePiece(5, 3, Color.WHITE));
+        assertTrue(pawnBlack.canCapturePiece(3, 3, Color.WHITE, Color.BLACK));
+        assertTrue(pawnBlack.canCapturePiece(5, 3, Color.WHITE, Color.BLACK));
 
-        assertTrue(pawnWhite.canCapturePiece(2, 4, Color.BLACK));
-        assertTrue(pawnWhite.canCapturePiece(4, 4, Color.BLACK));
+        assertTrue(pawnWhite.canCapturePiece(2, 4, Color.BLACK, Color.BLACK));
+        assertTrue(pawnWhite.canCapturePiece(4, 4, Color.BLACK, Color.BLACK));
 
-        assertFalse(pawnBlack.canCapturePiece(3, 5, Color.WHITE));
-        assertFalse(pawnWhite.canCapturePiece(4, 2, Color.BLACK));
-        assertFalse(pawnWhite.canCapturePiece(3, 4, Color.BLACK));
-        assertFalse(pawnBlack.canCapturePiece(4, 3, Color.WHITE));
+        assertFalse(pawnBlack.canCapturePiece(3, 5, Color.WHITE, Color.BLACK));
+        assertFalse(pawnWhite.canCapturePiece(4, 2, Color.BLACK, Color.BLACK));
+        assertFalse(pawnWhite.canCapturePiece(3, 4, Color.BLACK, Color.BLACK));
+        assertFalse(pawnBlack.canCapturePiece(4, 3, Color.WHITE, Color.BLACK));
     }
 
 }

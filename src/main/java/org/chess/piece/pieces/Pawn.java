@@ -11,7 +11,7 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean canMove(int positionX, int positionY) {
+    public boolean canMove(int positionX, int positionY, Color pathColor) {
         int currenPositionX = this.currentPosition[1];
         int currentPositionY = this.currentPosition[0];
 
@@ -19,7 +19,7 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color) {
+    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
         int currentPositionX = this.currentPosition[0];
         int currentPositionY = this.currentPosition[1];
 

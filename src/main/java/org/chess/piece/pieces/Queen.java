@@ -10,7 +10,7 @@ public class Queen extends Piece {
     }
 
     @Override
-    public boolean canMove(int positionX, int positionY) {
+    public boolean canMove(int positionX, int positionY, Color pathColor) {
         int currentPositionX = this.currentPosition[1];
         int currentPositionY = this.currentPosition[0];
 
@@ -19,8 +19,8 @@ public class Queen extends Piece {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color) {
-        return !this.color.equals(color) && canMove(positionX, positionY);
+    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
+        return !this.color.equals(color) && canMove(positionX, positionY, pathColor);
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {

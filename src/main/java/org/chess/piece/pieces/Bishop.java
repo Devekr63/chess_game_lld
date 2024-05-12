@@ -14,13 +14,16 @@ public class Bishop extends Piece {
     }
 
     @Override
-    public boolean canMove(int positionX, int positionY) {
-        return canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+    public boolean canMove(int positionX, int positionY, Color pathColor) {
+        return this.pathColor.equals(pathColor)
+                && canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color) {
-        return !this.color.equals(color) && canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
+        return this.pathColor.equals(pathColor)
+                && !this.color.equals(color)
+                && canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {

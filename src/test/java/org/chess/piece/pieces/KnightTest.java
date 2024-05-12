@@ -11,14 +11,14 @@ class KnightTest {
     public void testRookMovement() {
         Knight knight = new Knight(Color.BLACK, 4, 4);
 
-        assertTrue(knight.canMove(5, 2));
-        assertTrue(knight.canMove(6, 3));
-        assertTrue(knight.canMove(5, 6));
-        assertTrue(knight.canCapturePiece(6, 5, Color.WHITE));
-        assertTrue(knight.canMove(3, 2));
-        assertTrue(knight.canCapturePiece(2, 3, Color.WHITE));
-        assertTrue(knight.canCapturePiece(3, 6, Color.WHITE));
-        assertTrue(knight.canMove(2, 5));
+        assertTrue(knight.canMove(5, 2, Color.BLACK));
+        assertTrue(knight.canMove(6, 3, Color.BLACK));
+        assertTrue(knight.canMove(5, 6, Color.BLACK));
+        assertTrue(knight.canCapturePiece(6, 5, Color.WHITE, Color.BLACK));
+        assertTrue(knight.canMove(3, 2, Color.BLACK));
+        assertTrue(knight.canCapturePiece(2, 3, Color.WHITE, Color.BLACK));
+        assertTrue(knight.canCapturePiece(3, 6, Color.WHITE, Color.BLACK));
+        assertTrue(knight.canMove(2, 5, Color.BLACK));
     }
 
 }

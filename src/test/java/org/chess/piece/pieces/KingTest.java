@@ -12,23 +12,23 @@ class KingTest {
     public void testDiagonalMovement() {
         King king = new King(Color.BLACK, 4, 4);
 
-        assertTrue(king.canMove(3, 3));
-        assertTrue(king.canMove(3, 5));
-        assertTrue(king.canMove(5, 3));
-        assertTrue(king.canMove(5, 5));
+        assertTrue(king.canMove(3, 3, Color.BLACK));
+        assertTrue(king.canMove(3, 5, Color.BLACK));
+        assertTrue(king.canMove(5, 3, Color.BLACK));
+        assertTrue(king.canMove(5, 5, Color.BLACK));
 
-        assertFalse(king.canMove(5, 6));
+        assertFalse(king.canMove(5, 6, Color.BLACK));
     }
 
     @Test
     public void testStraightMovement() {
         King king = new King(Color.BLACK, 4, 4);
 
-        assertTrue(king.canMove(3, 4));
-        assertTrue(king.canMove(4, 3));
-        assertTrue(king.canMove(4, 5));
-        assertTrue(king.canMove(5, 4));
+        assertTrue(king.canMove(3, 4, Color.BLACK));
+        assertTrue(king.canMove(4, 3, Color.BLACK));
+        assertTrue(king.canMove(4, 5, Color.BLACK));
+        assertTrue(king.canMove(5, 4, Color.BLACK));
 
-        assertFalse(king.canMove(6, 6));
+        assertFalse(king.canMove(6, 6, Color.BLACK));
     }
 }

@@ -11,12 +11,12 @@ public class Knight extends Piece {
     }
 
     @Override
-    public boolean canMove(int positionX, int positionY) {
+    public boolean canMove(int positionX, int positionY, Color pathColor) {
         return canMoveLShaped(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color) {
+    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
         return !this.color.equals(color) && canMoveLShaped(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 
