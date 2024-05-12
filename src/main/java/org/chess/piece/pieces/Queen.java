@@ -11,11 +11,10 @@ public class Queen extends Piece {
 
     @Override
     public boolean canMove(int positionX, int positionY, Color pathColor) {
-        int currentPositionX = this.currentPosition[1];
-        int currentPositionY = this.currentPosition[0];
-
-        return canMoveDiagonal(positionX, positionY, currentPositionX, currentPositionY)
-                || canMoveStraight(positionX, positionY, currentPositionX, currentPositionY);
+        boolean canMove = canMoveDiagonal(positionX, positionY, this.getPositionX(), this.getPositionY())
+                || canMoveStraight(positionX, positionY, this.getPositionX(), this.getPositionY());
+        if (canMove) jumpToNewPosition(positionX, positionY);
+        return canMove;
     }
 
     @Override

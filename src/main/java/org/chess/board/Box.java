@@ -7,6 +7,10 @@ public class Box {
     Piece piece;
     Color color;
 
+    public Box(Color color) {
+        this.color = color;
+    }
+
     public Box(Piece piece, Color color) {
         this.piece = piece;
         this.color = color;

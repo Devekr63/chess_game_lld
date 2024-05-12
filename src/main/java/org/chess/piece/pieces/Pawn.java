@@ -12,18 +12,20 @@ public class Pawn extends Piece {
 
     @Override
     public boolean canMove(int positionX, int positionY, Color pathColor) {
-        int currenPositionX = this.currentPosition[1];
-        int currentPositionY = this.currentPosition[0];
-
-        return canMoveForward(positionX, positionY, currenPositionX, currentPositionY);
+        boolean canMove = canMoveForward(positionX, positionY, this.getPositionX(), this.getPositionY());
+        if (canMove) {
+            jumpToNewPosition(positionX, positionY);
+        }
+        return canMove;
     }
 
     @Override
     public boolean canCapturePiece(int positionX, int positionY, Color enemyColor, Color pathColor) {
-        int currentPositionX = this.currentPosition[0];
-        int currentPositionY = this.currentPosition[1];
-
-        return !this.color.equals(enemyColor) && canMoveDiagonal(positionX, positionY, currentPositionX, currentPositionY);
+        boolean canCapture = !this.color.equals(enemyColor) && canMoveDiagonal(positionX, positionY, currentPosition[1], currentPosition[0]);
+        if (canCapture) {
+            jumpToNewPosition(positionX, positionY);
+        }
+        return canCapture;
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {
@@ -35,4 +37,9 @@ public class Pawn extends Piece {
         return this.color == Color.WHITE && positionX == currentPositionX && positionY - currentPositionY == 1
                 || this.color == Color.BLACK && positionX == currentPositionX && positionY - currentPositionY == -1;
     }
+
+//    private void jumpToNewPosition(int positionX, int positionY){
+//        this.setCurrentPositionX(positionX);
+//        this.setCurrentPositionY(positionY);
+//    }
 }

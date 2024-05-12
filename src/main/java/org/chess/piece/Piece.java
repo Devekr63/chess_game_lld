@@ -14,11 +14,24 @@ public abstract class Piece implements Movement {
         currentPosition[0] = y;
     }
 
-    public void setCurrentPositionX(int currentPositionX) {
+    protected void jumpToNewPosition(int positionX, int positionY) {
+        this.setPositionX(positionX);
+        this.setPositionY(positionY);
+    }
+
+    public int getPositionX() {
+        return currentPosition[1];
+    }
+
+    public void setPositionX(int currentPositionX) {
         this.currentPosition[1] = currentPositionX;
     }
 
-    public void setCurrentPositionY(int currentPositionY) {
+    public int getPositionY() {
+        return currentPosition[0];
+    }
+
+    public void setPositionY(int currentPositionY) {
         this.currentPosition[0] = currentPositionY;
     }
 

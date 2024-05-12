@@ -12,12 +12,14 @@ public class Rook extends Piece {
 
     @Override
     public boolean canMove(int positionX, int positionY, Color pathColor) {
-        return canMoveStraight(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+        boolean canMove = canMoveStraight(positionX, positionY, this.getPositionX(), this.getPositionY());
+        if (canMove) jumpToNewPosition(positionX, positionY);
+        return canMove;
     }
 
     @Override
     public boolean canCapturePiece(int positionX, int positionY, Color enemyColor, Color pathColor) {
-        return !this.color.equals(enemyColor) && canMoveStraight(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
+        return !this.color.equals(enemyColor) && canMove(positionX, positionY, pathColor);
     }
 
     private boolean canMoveStraight(int positionX, int positionY, int currentPositionX, int currentPositionY) {

@@ -12,9 +12,11 @@ class PawnTest {
     public void testCanMove() {
         Pawn pawnBlack = new Pawn(Color.BLACK, 4, 4);
         Pawn pawnWhite = new Pawn(Color.WHITE, 3, 3);
+        Pawn pw = new Pawn(Color.WHITE, 3, 1);
 
         assertTrue(pawnBlack.canMove(4, 3, Color.BLACK));
         assertTrue(pawnWhite.canMove(3, 4, Color.BLACK));
+        assertTrue(pw.canMove(3, 2, Color.BLACK));
 
         assertFalse(pawnBlack.canMove(5, 4, Color.BLACK));
         assertFalse(pawnWhite.canMove(2, 3, Color.BLACK));
