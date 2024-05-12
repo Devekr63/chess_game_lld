@@ -20,9 +20,9 @@ public class Bishop extends Piece {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
+    public boolean canCapturePiece(int positionX, int positionY, Color enemyColor, Color pathColor) {
         return this.pathColor.equals(pathColor)
-                && !this.color.equals(color)
+                && !this.color.equals(enemyColor)
                 && canMoveDiagonal(positionX, positionY, this.currentPosition[1], this.currentPosition[0]);
     }
 

@@ -19,11 +19,11 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
+    public boolean canCapturePiece(int positionX, int positionY, Color enemyColor, Color pathColor) {
         int currentPositionX = this.currentPosition[0];
         int currentPositionY = this.currentPosition[1];
 
-        return !this.color.equals(color) && canMoveDiagonal(positionX, positionY, currentPositionX, currentPositionY);
+        return !this.color.equals(enemyColor) && canMoveDiagonal(positionX, positionY, currentPositionX, currentPositionY);
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {

@@ -19,8 +19,8 @@ public class King extends Piece {
     }
 
     @Override
-    public boolean canCapturePiece(int positionX, int positionY, Color color, Color pathColor) {
-        return !this.color.equals(color) && canMove(positionX, positionY, pathColor);
+    public boolean canCapturePiece(int positionX, int positionY, Color enemyColor, Color pathColor) {
+        return !this.color.equals(enemyColor) && canMove(positionX, positionY, pathColor);
     }
 
     private boolean canMoveDiagonal(int positionX, int positionY, int currentPositionX, int currentPositionY) {

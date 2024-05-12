@@ -18,6 +18,7 @@ class KnightTest {
         assertTrue(knight.canMove(3, 2, Color.BLACK));
         assertTrue(knight.canCapturePiece(2, 3, Color.WHITE, Color.BLACK));
         assertTrue(knight.canCapturePiece(3, 6, Color.WHITE, Color.BLACK));
+        assertTrue(knight.canCapturePiece(3, 6, Color.WHITE, Color.WHITE));
         assertTrue(knight.canMove(2, 5, Color.BLACK));
     }
 
