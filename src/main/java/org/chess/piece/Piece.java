@@ -19,6 +19,10 @@ public abstract class Piece implements Movement {
         this.setPositionY(positionY);
     }
 
+    public PieceType getType() {
+        return type;
+    }
+
     public int getPositionX() {
         return currentPosition[1];
     }

@@ -11,9 +11,9 @@ public class Box {
         this.color = color;
     }
 
-    public Box(Piece piece, Color color) {
+    public Box(Piece piece, Color boxColor) {
         this.piece = piece;
-        this.color = color;
+        this.color = boxColor;
     }
 
     public Piece getPiece() {

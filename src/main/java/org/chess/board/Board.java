@@ -2,7 +2,10 @@ package org.chess.board;
 
 import org.chess.game.Color;
 import org.chess.piece.Piece;
+import org.chess.piece.PieceType;
 import org.chess.piece.pieces.*;
+import org.chess.rule.KingUnseizable;
+import org.chess.rule.Rule;
 
 public class Board {
     Box[][] board = new Box[8][8];
@@ -33,10 +36,17 @@ public class Board {
         }
 
         Piece enemyPiece = getPiece(newPositionX, newPositionY);
-        if (piece.canCapturePiece(newPositionX, newPositionY, enemyPiece.getColor(), pathColor)) {
+        PieceType enemyPieceType = enemyPiece.getType();
+        if (!enemyPieceType.equals(PieceType.KING)
+                && piece.canCapturePiece(newPositionX, newPositionY, enemyPiece.getColor(), pathColor))
+        {
             System.out.println("Piece captured " + getPiece(newPositionX, newPositionY).getClass().getSimpleName());
             move(newPositionX, newPositionY, currentPositionX, currentPositionY);
             return true;
+        }
+        if(enemyPieceType.equals(PieceType.KING)){
+           Rule rule = new KingUnseizable();
+           rule.error();
         }
         System.out.println("Invalid Move.");
         return false;
