@@ -37,9 +37,4 @@ public class Pawn extends Piece {
         return this.color == Color.WHITE && positionX == currentPositionX && positionY - currentPositionY == 1
                 || this.color == Color.BLACK && positionX == currentPositionX && positionY - currentPositionY == -1;
     }
-
-//    private void jumpToNewPosition(int positionX, int positionY){
-//        this.setCurrentPositionX(positionX);
-//        this.setCurrentPositionY(positionY);
-//    }
 }

@@ -15,12 +15,12 @@ class QueenTest {
         //Correct movement
         assertTrue(queen.canMove(7, 1, Color.BLACK));
         assertTrue(queen.canMove(1, 7, Color.BLACK));
-        assertTrue(queen.canMove(0, 0, Color.BLACK));
-        assertTrue(queen.canMove(7, 7, Color.BLACK));
+        assertTrue(queen.canMove(0, 6, Color.BLACK));
+        assertTrue(queen.canMove(7, 6, Color.BLACK));
 
         //wrong movement
-        assertFalse(queen.canMove(6, 7, Color.BLACK));
-        assertFalse(queen.canMove(7, 6, Color.BLACK));
+        assertFalse(queen.canMove(5, 5, Color.BLACK));
+        assertFalse(queen.canMove(6, 4, Color.BLACK));
     }
 
     @Test
@@ -35,6 +35,6 @@ class QueenTest {
 
         //Wrong movement
         assertFalse(queen.canMove(2, 5, Color.BLACK));
-        assertFalse(queen.canMove(1, 3, Color.BLACK));
+        assertFalse(queen.canMove(2, 5, Color.BLACK));
     }
 }

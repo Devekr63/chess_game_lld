@@ -14,9 +14,9 @@ class BishopTest {
         Bishop bishop = new Bishop(Color.BLACK, 4, 4, Color.WHITE);
 
         assertTrue(bishop.canMove(0, 0, Color.WHITE));
-        assertTrue(bishop.canMove(7, 1, Color.WHITE));
-        assertTrue(bishop.canMove(1, 7, Color.WHITE));
-        assertTrue(bishop.canMove(7, 7, Color.WHITE));
-        assertFalse(bishop.canMove(7, 7, Color.BLACK));
+        assertTrue(bishop.canMove(2, 2, Color.WHITE));
+        assertTrue(bishop.canMove(0, 4, Color.WHITE));
+        assertTrue(bishop.canMove(3, 7, Color.WHITE));
+        assertFalse(bishop.canMove(7, 3, Color.BLACK));
     }
 }
